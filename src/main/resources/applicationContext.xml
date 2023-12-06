@@ -10,15 +10,19 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="ru.altana.springcourse.ClassicalMusic">
+          class="ru.altana.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer"
-    class="ru.altana.springcourse.MusicPlayer">
-        <property name="music" ref="musicBean"/>
-        
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--    class="ru.altana.springcourse.MusicPlayer"-->
+<!--    scope="prototype">-->
+<!--        <property name="music" ref="musicBean"/>-->
+<!--        -->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
