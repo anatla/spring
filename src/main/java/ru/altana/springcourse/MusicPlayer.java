@@ -1,8 +1,11 @@
 package ru.altana.springcourse;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
     private Music music;
-    //IoC
+
     public MusicPlayer(Music music) {
         this.music = music;
     }
